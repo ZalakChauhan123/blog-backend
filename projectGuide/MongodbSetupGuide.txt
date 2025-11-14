@@ -1,0 +1,17 @@
+
+
+Create Project in MongoDB online database
+Create Cluster
+
+In " Connect to Cluster " Copy Username & Password.
+    Click on "Create Database User" Button
+    Click on "Chhose a connection request" Button
+
+Select "Driver" Option in Choose Connection method
+    Check Driver name. It should be Nodejs & Version. It should be latest
+    Copy NPM command & for MonfoDB driver in VS Code
+    Copy " Connection String " and Set in .env file.
+    Check mongoose.ts file
+    
+
+

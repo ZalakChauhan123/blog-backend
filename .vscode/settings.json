@@ -1,0 +1,19 @@
+{
+  "editor.tokenColorCustomizations": {
+    "comments": "#605f5f",  // Medium grey
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "comment.block",
+          "comment.line",
+          "comment.block.documentation"
+        ],
+        "settings": {
+          "foreground": "#605f5f",  // Medium grey
+          "fontStyle": "italic"     // Optional: makes comments italic
+        }
+      }
+    ]
+  }
+}

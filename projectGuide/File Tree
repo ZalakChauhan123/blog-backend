@@ -1,0 +1,22 @@
+🌲 Core Project Hierarchy
+
+
+├── 📦 node_modules
+├── 💻 src
+│   ├── 🛠️ config
+│   │   └── 🟦 index.ts
+│   ├── 🚦 controller\v1\auth
+│   │   └── 🟦 register.ts
+│   ├── 📚 lib
+│   │   ├── 🟦 express_rate_limit.ts
+│   │   ├── 🟦 mongoose.ts
+│   │   └── 🟦 winston.ts
+│   ├── 🛣️ routes\v1
+│   │   ├── 🟦 auth.ts
+│   │   └── 🟦 index.ts
+│   └── 🟦 server.ts
+├── 🔑 .env
+├── 🔄 nodemon.json
+├── 🔒 package-lock.json
+├── 📜 package.json
+└── 🟦 tsconfig.json

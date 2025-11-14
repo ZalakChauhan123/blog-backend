@@ -1,0 +1,10 @@
+
+// JWT Generation
+Install jsonwebtoken package using npm command as a dependencies & devdependecies
+Set up 4 variables in .env file = JWT_ACCESS_SECRETE , JWT_REFRESH_SECRETE , ACCESS_TOKEN_EXPIRY , REFRESH_TOKEN_EXPIRY
+Set up 4 variables in src/config/index.ts file as well
+
+Create jwt.ts file
+
+// Use of JWT Token
+in controller/v1/auth/register file while registering new users

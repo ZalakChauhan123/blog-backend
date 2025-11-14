@@ -1,0 +1,14 @@
+Create Package.json 
+    - In this change main Obj. -- "main": "dist/server.js"
+
+
+Run typeScript command as a devDependencies
+
+Setup tsconfig.json File 
+
+Add tsconfig-paths module in packtage.json as a devDependencies & add "paths" value in tsconfig.json file
+
+Setup CORS
+
+
+
