@@ -27,8 +27,9 @@ const config = {
     REFRESH_TOKEN_EXPIRY : process.env.REFRESH_TOKEN_EXPIRY as ms.StringValue,
     defaultResponseLimit : 20,
     defaultResponseOffset : 0,
-
-
+    CLOUDINARY_CLOUND_NAME : process.env.CLOUDINARY_CLOUND_NAME!,
+    CLOUDINARY_API_KEY : process.env.CLOUDINARY_API_KEY!,
+    CLOUDINARY_SECRATE : process.env.CLOUDINARY_SECRATE!
 } 
 
 export default config;

@@ -44,7 +44,7 @@ const authenticate = (req:Request, res:Response, next:NextFunction) => {
         req.userId = jwtPayload.userId;
 
         // Proceed to next middleware or route handler
-        return next()
+        return next();
 
     } catch (err) {
 

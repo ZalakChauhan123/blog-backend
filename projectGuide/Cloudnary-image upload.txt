@@ -1,0 +1,40 @@
+| Concept                    | Simple Meaning                                      |
+| -------------------------- | --------------------------------------------------- |
+| **Cloudinary**             | Cloud storage for images/videos                     |
+| **What can it do?**        | Upload, delete, resize, compress, transform images  |
+
+
+🧩 How Cloudinary works
+------------------------
+1️⃣ User uploads an image (from your UI or API)
+2️⃣ Your backend receives the file
+3️⃣ You upload it to Cloudinary using the npm package
+4️⃣ Cloudinary returns a URL
+5️⃣ You save the URL in your database
+6️⃣ You use that URL to show the image on your website
+
+
+🛠️ Example: Setup Cloudinary
+-----------------------------
+import { v2 as cloudinary } from 'cloudinary';
+
+cloudinary.config({
+  cloud_name: 'your_cloud_name',
+  api_key: 'your_api_key',
+  api_secret: 'your_api_secret',  
+});
+
+
+📤 Example: Upload an Image
+----------------------------
+const result = await cloudinary.uploader.upload('path/to/image.jpg');
+console.log(result.secure_url);
+
+
+Cloudinary responds with:
+-------------------------
+{
+  "secure_url": "https://res.cloudinary.com/your-cloud/image/upload/abc123.jpg"
+}
+
+Save this URL in your database.

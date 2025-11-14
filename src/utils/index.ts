@@ -14,14 +14,14 @@ export const genUsername = (): string => {
 
 
 // Generate random slug from Username (e.g. my-title-abc123)
-export const genSlug = (title: String) => {
+export const genSlug = (title: string): string => {
 
     const slug = title
-        .toLocaleLowerCase()
+        .toLowerCase()
         // Removes leading and trailing whitespace (" hi " → "hi")
         .trim()
         // remove anything that's not a-z, 0-9, space or hyphen
-        .replace(/[^a-z0-9\s-]/g, '') 
+        .replace(/[^a-z0-9]\s-/g, '') 
         // replace spaces (one or more) with a single hyphen
         .replace(/\s+/g, '-')
         // collapse multiple hyphens ("a--b" → "a-b")
@@ -39,9 +39,7 @@ export const genSlug = (title: String) => {
     const slugUri = encodeURIComponent(slug);
 
     // Build final slug & return
-    const uniqueSlug = `${ slugUri }-${ randomChars }`;
+    const uniqueSlug = `${ slugUri }-${randomChars}`;
 
-    return uniqueSlug
-
-
+    return uniqueSlug;
 }
