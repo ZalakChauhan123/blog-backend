@@ -13,6 +13,10 @@ const createBlog = async(req:Request, res:Response): Promise<void> => {
 
     try{
 
+    res.status(200).json({
+        "API Live"
+    })
+
     } catch (err) {
         res.status(500).json({
             code : 'ServerError',
