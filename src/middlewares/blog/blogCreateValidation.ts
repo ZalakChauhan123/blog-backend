@@ -1,7 +1,7 @@
 // Types
 import { body } from 'express-validator';
 
-export const CreateBlogValidation = [
+export const createBlogValidation = [
 
     body('title')
     .trim()
