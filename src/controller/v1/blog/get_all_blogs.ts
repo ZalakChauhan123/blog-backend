@@ -18,7 +18,6 @@ const getAllBlogs = async(req: Request, res:Response) => {
 
         // Get users's objects id
         const userId = req.userId;
-        console.log('user id - ', userId);
         // Set limit & offset for req.query
         const limit = parseInt(req.query.limit as string) || config.defaultResponseLimit;
         const offset = parseInt(req.query.offset as string) || config.defaultResponseOffset;
@@ -27,7 +26,6 @@ const getAllBlogs = async(req: Request, res:Response) => {
 
         // find role based on the object id in user db
         const user = await User.findById(userId).select('role').lean().exec();
-        console.log('user Role - ', user)
         const query : QueryType = {};
 
         // Show only published post to normal users
