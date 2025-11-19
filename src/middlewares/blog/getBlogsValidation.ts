@@ -31,3 +31,7 @@ export const getBlogByUserValidation = [
         .withMessage('Page must be a positive interger')
 
 ];
+
+export const getBlogBySlugValidation = [
+     param('slug').notEmpty().withMessage('Slug is required')
+];

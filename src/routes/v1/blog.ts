@@ -8,7 +8,7 @@ import authorize from'@/middlewares/user/authorize';
 import validationError from '@/middlewares/auth/validationError';
 import uploadBlogBanner from '@/middlewares/blog/uploadBannerImage';
 import {createBlogValidation} from '@/middlewares/blog/blogCreateValidation';
-import {getBlogValidation, getBlogByUserValidation} from '@/middlewares/blog/getBlogsValidation';
+import {getBlogValidation, getBlogByUserValidation, getBlogBySlugValidation} from '@/middlewares/blog/getBlogsValidation';
 
 
 // Controllers
@@ -17,6 +17,7 @@ import createBlog from '@/controller/v1/blog/create_blog';
 // get
 import getAllBlogs from '@/controller/v1/blog/get_all_blogs';
 import getBlogByUser from '@/controller/v1/blog/get_blog_by_user';
+import getBlogBySlug from '@/controller/v1/blog/get_blogs_by_slug';
 
 
 // Multer upload
@@ -54,5 +55,12 @@ router.get(
     getBlogByUser
 );
 
+router.get(
+    "/:slug",
+    authenticate,
+    authorize(['admin','user']),
+    getBlogBySlugValidation,
+    validationError,
+    getBlogBySlug);
 
 export default router;
