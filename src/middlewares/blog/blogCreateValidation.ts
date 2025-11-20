@@ -20,4 +20,4 @@ export const createBlogValidation = [
     .isIn( ['draft','published'] )
     .withMessage('Status must be one of the value from draft or published'),
 
-]
+];
