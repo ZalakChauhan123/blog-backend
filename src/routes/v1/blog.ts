@@ -18,6 +18,7 @@ import createBlog from '@/controller/v1/blog/create_blog';
 import getAllBlogs from '@/controller/v1/blog/get_all_blogs';
 import getBlogByUser from '@/controller/v1/blog/get_blog_by_user';
 import getBlogBySlug from '@/controller/v1/blog/get_blogs_by_slug';
+import deleteBlog from '@/controller/v1/blog/delete_blog';
 
 
 // Multer upload
@@ -61,6 +62,15 @@ router.get(
     authorize(['admin','user']),
     getBlogBySlugValidation,
     validationError,
-    getBlogBySlug);
+    getBlogBySlug
+);
+
+router.delete(
+    "/:blogId",
+    authenticate,
+    authorize(['admin']),
+    deleteBlog
+);
+
 
 export default router;
