@@ -1,7 +1,7 @@
 // Node modules
 import { Router } from 'express';
 import multer from 'multer';
-import { param, body } from 'express-validator';
+
 
 // Middlewares or validations
 import authenticate from '@/middlewares/auth/authenticate';

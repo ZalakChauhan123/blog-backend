@@ -25,7 +25,6 @@ const authorize = (roles: AuthRole[]) => {
 
             // Check for user role (admin, user)
             const user = await User.findById(userId).select('role').exec();
-            /* console.log('FROM AUTHORIZE Middleware - ',user) */
 
             // If user doesn't exists
             if (!user) {
