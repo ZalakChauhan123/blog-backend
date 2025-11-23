@@ -17,13 +17,13 @@ import  type { Request, Response } from 'express';
  *                          or 500 if a server error occurs.
  *                          Increments and saves the like count on success.
  * 
- * Logic 
+ * -------- Logic --------
  * 
  * Get blogId from params
  * Get userId from req.body
  * find blog based on blog Id with selection of likeCount
- * if not found , give 404 error
- * queries the db to check whether the current user has alreadz liked the given blog -- To prevent duplicate likes
+ * if blog not found , give 404 error
+ * Queries the db to check whether the current user has already liked the given blog -- Reason :- To prevent duplicate likes
  * Create new like entry for specific blog
  * Increment likeCount in blog db
  * save updated blog
@@ -42,7 +42,6 @@ const likeBlog = async (req: Request, res:Response) => {
         console.log('user id- ', userId );
 
         const blog = await Blog.findById(blogId).select( 'likeCount' ).exec();
-        console.log('Blog - ', blog);
 
         if(!blog) {
             res.status(404).json({
