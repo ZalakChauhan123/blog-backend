@@ -4,7 +4,6 @@ import { JSDOM } from 'jsdom';
 
 // custom module
 import { logger } from '@/lib/winston';
-import config from '@/config';
 
 // Model
 import Blog from '@/model/blog';
