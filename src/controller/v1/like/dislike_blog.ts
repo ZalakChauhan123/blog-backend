@@ -23,11 +23,9 @@ const unlikeBlog = async (req:Request, res:Response) => {
         const userId = req.userId;
         // Get blogId from req.params
         const {blogId} = req.params;
-        console.log('user id & Blog id - ', { userId,  blogId});
 
         // Check like entry exits in the Like db
         const existingLike = await Like.findOne({ userId, blogId }).lean().exec();
-        console.log('existingLike - ',existingLike)
 
         if(!existingLike) {
             res.status(400).json({
