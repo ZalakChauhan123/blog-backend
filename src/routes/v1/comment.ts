@@ -10,6 +10,7 @@ import createBlogValidation from '@/middlewares/comment/commentBlogValidation';
 // Controller
 import commentBlog from '@/controller/v1/comment/create_comment';
 import getComment from  '@/controller/v1/comment/get_comment';
+import getCommentsByBlog from '@/controller/v1/comment/get_comment_by_blog';
 
 // Route intial
 const router = Router();
@@ -30,6 +31,12 @@ router.get(
     authenticate,
     authorize(['admin', 'user']),
     getComment
+);
+
+router.get(
+    '/blog/:slug',
+    getCommentsByBlog
+
 );
 
 export default router;
