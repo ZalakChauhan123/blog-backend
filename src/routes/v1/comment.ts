@@ -9,6 +9,7 @@ import createBlogValidation from '@/middlewares/comment/commentBlogValidation';
 
 // Controller
 import commentBlog from '@/controller/v1/comment/create_comment';
+import getComment from  '@/controller/v1/comment/get_comment';
 
 // Route intial
 const router = Router();
@@ -22,6 +23,13 @@ router.post(
     createBlogValidation,
     validationErrors,
     commentBlog
+);
+
+router.get(
+    '/',
+    authenticate,
+    authorize(['admin', 'user']),
+    getComment
 );
 
 export default router;
